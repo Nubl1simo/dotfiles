@@ -2,9 +2,13 @@
 # wm independent hotkeys
 #
 
+# super duper mega hacker control panel #
+super + shift + x
+	~/dox/scripts/start.sh
+
 # terminal emulator
 super + Return
-	alacritty
+	xfce4-terminal
 
 # st
 super + {shift + } Return
@@ -31,13 +35,10 @@ super + =
 	,θσ
 
 # odysee
-super + + y
-	chromium odysee.com
 
 # brave
 super + b
-	brave
-	#qutebrowser
+	qutebrowser /home/nub/dox/www/homepage/hp.html
 	#chromium
 
 # crhomium
