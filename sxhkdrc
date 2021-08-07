@@ -8,15 +8,15 @@ super + shift + x
 
 # terminal emulator
 super + Return
+	st
+
+# xfce term
+super + {shift + } Return
 	xfce4-terminal
 
-# st
-super + {shift + } Return
-	st
 # program launcher
 super + @space 
-	dmenu_run
-#	rofi -show run
+	rofi -show run
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -26,28 +26,20 @@ super + Escape
 # Custom startup keys
 #
 
-# greek
-super + shift + u
-	,gr
+# pomodoro timer
+super + shift + o
+	stt
 
-# english
-super + =
-	,θσ
-
-# odysee
-
-# brave
+# web browser
 super + b
 	qutebrowser /home/nub/dox/www/homepage/hp.html
-	#chromium
 
-# crhomium
-#super + ctrl + b
-#	brave
+#super + shift + b
+	brave
 
 # ranger files
 super + n
-	alacritty -e ranger
+	st -e ranger
 
 # nemo files
 super + shift + n
@@ -61,28 +53,13 @@ super + {shift + alt + } o
 super + {shift + } s
 	gnome-screenshot
 
-# firefox
-super + {shift + } b
-	firefox
-
 # htop
 super + u
-	alacritty -e htop
+	st -e htop
 
 super + i
-	alacritty -e clock
+	st -e clock
 
-# minecraft yes i'm that cool
-super + {shift + } m
-	~/minecraft.sh
-
-# n u j a b e s
-super + {shift + } p
-	vlc ~/Music/Nujabes\ -\ Aruarian\ Dance\ \(Homework\ Edit\).mp3
-
-# the pi fucking com
-super + ctrl + p
-	picom -f
 #
 # bspwm hotkeys
 #
