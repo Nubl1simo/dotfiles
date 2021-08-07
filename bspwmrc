@@ -17,4 +17,5 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a gnome-pomodoro state=floating
 
-nitrogen --random ~/dox/pix/nord-wallpapers-i-like/ --set-zoom-fill
+#nitrogen --random ~/dox/pix/nord-wallpapers-i-like/ --set-zoom-fill
+nitrogen --restore
