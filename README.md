@@ -1,2 +1,2 @@
 # dotfiles
-dotifle repository (mostly $HOME/.config/) of whatever i happen to be using.
+dotifle repository of whatever software i happen to be using.
