@@ -24,8 +24,11 @@ set incsearch
 set scrolloff=4
 set signcolumn=yes
 set conceallevel=1
-autocmd VimEnter * NERDTree | wincmd p
-"autocmd VimEnter * hi Normal ctermbg=none
+" autocmd VimEnter * NERDTree | wincmd p
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+autocmd VimEnter * hi Normal ctermbg=none
 ":options for help
 
 
