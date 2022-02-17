@@ -1,24 +1,18 @@
-# Clean
-rmdir Desktop Downloads VirtualBox\ VMs/
-mv    ~/Screenshot*.png ~/dox/media/pix/PrtSc/
-mv    ~/*.mkv ~/dox/media/videos/
-rm    $HOME/.lesshst
-rm -r $HOME/.w3m
-clear
-
 export EDITOR="nvim"
 export TERM="st"
 export VISUAL="nvim"
 
 # PS1 and enable colors
 autoload -U colors && colors
-#PS1="%B%{$fg[yellow]%}[%{$fg[green]%}%n%{$fg[yellow]%}@%{$fg[cyan]%}%M %{$fg[yellow]%}%~%{$fg[yellow]%}]%{$reset_color%}$%b "
-#PS1="%B%{$fg[magenta]%}[%{$fg[magenta]%}%n%{$fg[cyan]%}@%{$fg[magenta]%}%M %{$fg[cyan]%}%~%{$fg[magenta]%}]%{$reset_color%}$%b "
-PS1="%B%{$fg[magenta]%}[%{$fg[magenta]%}%n%{$fg[white]%}@%{$fg[magenta]%}%M %{$fg[white]%}%~%{$fg[magenta]%}]%{$reset_color%}$%b "
+# PS1="%B%{$fg[blue]%}[%{$fg[blue]%}%n%{$fg[white]%}@%{$fg[blue]%}%M %{$fg[white]%}%~%{$fg[blue]%}]%{$reset_color%}$%b "
+if [[ $(whoami) == "root" ]]; then
+	PS1="%B%{$fg[red]%}[%{$fg[red]%}%n%{$fg[white]%}@%{$fg[red]%}%M %{$fg[white]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+else
+	PS1="%B%{$fg[blue]%}[%{$fg[blue]%}%n%{$fg[white]%}@%{$fg[blue]%}%M %{$fg[white]%}%~%{$fg[blue]%}]%{$reset_color%}$%b "
+fi
 
 # Put history in ~/.cache/ dir
-HISTSIZE=3000
-SAVEHIST=3000
+SAVEHIST=0
 HISTFILE=~/.cache/zsh/history
 
 # Autocomplete and tab menu
@@ -48,15 +42,15 @@ bindkey -v '^?' backward-delete-char
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
+	if [[ ${KEYMAP} == vicmd ]] ||
+		 [[ $1 = 'block' ]]; then
+		echo -ne '\e[1 q'
+	elif [[ ${KEYMAP} == main ]] ||
+		[[ ${KEYMAP} == viins ]] ||
+		[[ ${KEYMAP} = '' ]] ||
+		[[ $1 = 'beam' ]]; then
+		echo -ne '\e[5 q'
+	fi
 }
 zle -N zle-keymap-select
 zle-line-init() {
@@ -68,62 +62,65 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new
 
 
-# Syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-
-ls -A | wc -l
-
 # Installation aliases
-alias xi="sudo pacman  -S"
-alias xr="sudo pacman  -Runs"
-alias xx="sudo pacman "
-alias xU="sudo pacman -yuS"
+alias xi="doas pacman -S"
+alias xr="doas pacman -Runs"
+alias xx="doas pacman"
+alias xU="doas pacman -ySu"
 
 #kb alias
 alias ch="setxkbmap ch"
 alias us="setxkbmap us"
 
 # power aliases
-alias pow="poweroff"
+alias pow="sudo poweroff"
 alias reb="reboot"
 alias asdf="startx"
 
 # file aliases
 alias ls="ls --color"
-alias lA="ls -A --color"
-alias ll="ls -l -h --color"
-alias llA="ls -lA -h --color"
+alias ls-="ls"
+alias la="ls -A --color"
+alias ll="ls -lA -h --color"
 alias wl="ls -A --color | wc -l"
 alias ..="cd .."
+alias lb="cd ~/.local/bin"
 
 # LaTeX aliases
-alias TX="cp /home/javi/dox/latex/doc/doc.tex"
+alias TX="cp $HOME/dox/latex/doc/doc.tex"
 alias xl="xelatex"
 alias pl="pdflatex"
-alias pkg="nvim ~/dox/pkg2"
+alias pkg="nvim $HOME/dox/etc/pkg"
 
 # Programs
 alias clock="tty-clock -S -s -c -C 6"
-# alias cal="calcurse"
 alias SM="mw -Y;neomutt"
 alias v="nvim"
-alias z="zathura"
+alias z="setsid zathura"
 alias am="alsamixer"
-alias zzz="sudo zzz"
-alias vsync1="xrandr --output HDMI3 --mode 1920x1080"
-alias 120rate="xrandr --rate 120hz"
-alias 2mon="xrandr --output HDMI-3 --left-of HDMI-1"
-alias pomo="/home/javi/dox/sh/pomodoro.sh"
-alias speedread="/home/javi/dox/git/old/speedread/speedread"
-alias todo="$HOME/dox/projects/Programming/bash/todo.sh"
+alias pm="pulsemixer"
+alias km="kmix"
+alias zzz="doas zzz"
+alias moc="mocp -O MOCDir=\"~/.config\"/moc"
 
 # conveniency aliases
-alias weather="$HOME/dox/sh/other/weather.sh"
-alias rpi="$HOME/dox/sh/other/ssh/1.sh"
-alias liro="$HOME/dox/sh/other/ssh/living-room.sh"
-alias kbr="$HOME/dox/sh/keyboard-remapping/commands"
+alias rpi="1.sh"
+alias liro="living-room.sh"
 alias mus="cd $HOME/dox/media/mus/"
+alias s="setsid -f"
+alias reload="xrdb ~/.config/.Xresources"
+alias obs="LIBGL_ALWAYS_SOFTWARE=1 setsid -f obs"
+alias webcam="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
+alias pv="pipe-viewer --resolution 480"
 
 # make
-alias maek="sudo make clean install"
+alias mci="doas make clean install"
+
+# external hdd
+alias ele="sudo mkdir /run/media/$USER/ /run/media/$USER/Elements && sudo mount /dev/sdb1 /run/media/$USER/Elements && cd /run/media/$USER/Elements"
+alias cdE="cd /run/media/$USER/Elements"
+
+# Syntax highlighting
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
