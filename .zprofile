@@ -1,1 +1,12 @@
-export ZDOTDIR="$HOME/.config/zsh"
+PATH="$HOME/.local/bin:$HOME/.local/bin/dmenu:$PATH"
+export ZDOTDIR="$HOME/.config/zsh/" #zsh config location
+export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc"
+export NOTMUCH_CONFIG="$HOME/.config/notmuch/notmuchrc"
+export NMBGIT="$HOME/.local/share/notmuch/nmbug"
+export CARGO_HOME="$HOME/.local/share/cargo"
+export GOPATH="$HOME/.local/share/go"
+export PASSWORD_STORE_DIR="$HOME/.local/share/pass"
+export RUSTUP_HOME="$HOME/.local/share/rustup"
+export XINITRC="$HOME/.config/X11/xinitrc"
+export XSERVERRC="$HOME/.config/X11/xserverrc"
+export XAUTHORITY="$HOME/.config/X11/xauthority"
