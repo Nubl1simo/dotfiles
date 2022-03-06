@@ -1,18 +1,16 @@
-#
-# wm independent hotkeys
-#
-#
-# terminal emulator
-super + shift + Return
-	xfce4-terminal
+#!/bin/zsh
 
 # terminal emulator
 super + Return
 	st
 
+# terminal emulator
+super + shift + Return
+	urxvt
+
 # program launcher
 super + @space 
-	~/dox/sh/dmenu-scripts/dmenu-run.sh
+	dmenu_run
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -22,23 +20,27 @@ super + Escape
 # Custom startup keys
 #
 
+# accents
+super + g
+	d-char
+
 # workspaces loader
 super + x
-    ~/dox/sh/dmenu-scripts/workspaces.sh
+	d-workspaces
 
 # edit config files script
 super + c
-	~/dox/sh/dmenu-scripts/config.sh
+	d-config
 
 # power dmenu script
 super + v
-	~/dox/sh/dmenu-scripts/lockmenu.sh
+	d-lockmenu
 
-# main web browser
+# browser bookmarks
 super + b
-	qutebrowser
+	d-web
 
-# secondary browser
+# browser
 super + shift + b
 	firefox
 
@@ -46,23 +48,30 @@ super + shift + b
 super + n
 	st -e /usr/bin/ranger
 
+# bluetooth
+super + m
+	blueberry
+
 # gui file manager
 super + shift + n
 	nemo
 
 # libreoffice writer
-super + shift + alt + o
-	lowriter
+super + shift + o
+	gtk-pipe-viewer
 
 # email client
 super + a
-	st -e $HOME/dox/sh/SM.sh
+	st -e SM.sh
+
+# email addresses
+super + shift + a
+	d-email
 
 # screenshot
 super + shift + s
 	gnome-screenshot
 
-# calcurse
+# anki
 super + e
-	st -e /usr/bin/calcurse
-
+	anki --no-sandbox

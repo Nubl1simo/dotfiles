@@ -15,6 +15,8 @@ fi
 SAVEHIST=0
 HISTFILE=~/.cache/zsh/history
 
+source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliasrc"
+
 # Autocomplete and tab menu
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -61,66 +63,6 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new
 
-
-# Installation aliases
-alias xi="doas pacman -S"
-alias xr="doas pacman -Runs"
-alias xx="doas pacman"
-alias xU="doas pacman -ySu"
-
-#kb alias
-alias ch="setxkbmap ch"
-alias us="setxkbmap us"
-
-# power aliases
-alias pow="sudo poweroff"
-alias reb="reboot"
-alias asdf="startx"
-
-# file aliases
-alias ls="ls --color"
-alias ls-="ls"
-alias la="ls -A --color"
-alias ll="ls -lA -h --color"
-alias wl="ls -A --color | wc -l"
-alias ..="cd .."
-alias lb="cd ~/.local/bin"
-
-# LaTeX aliases
-alias TX="cp $HOME/dox/latex/doc/doc.tex"
-alias xl="xelatex"
-alias pl="pdflatex"
-alias pkg="nvim $HOME/dox/etc/pkg"
-
-# Programs
-alias clock="tty-clock -S -s -c -C 6"
-alias SM="mw -Y;neomutt"
-alias v="nvim"
-alias z="setsid zathura"
-alias am="alsamixer"
-alias pm="pulsemixer"
-alias km="kmix"
-alias zzz="doas zzz"
-alias moc="mocp -O MOCDir=\"~/.config\"/moc"
-
-# conveniency aliases
-alias rpi="1.sh"
-alias liro="living-room.sh"
-alias mus="cd $HOME/dox/media/mus/"
-alias s="setsid -f"
-alias reload="xrdb ~/.config/.Xresources"
-alias obs="LIBGL_ALWAYS_SOFTWARE=1 setsid -f obs"
-alias webcam="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
-alias pv="pipe-viewer --resolution 480"
-
-# make
-alias mci="doas make clean install"
-
-# external hdd
-alias ele="sudo mkdir /run/media/$USER/ /run/media/$USER/Elements && sudo mount /dev/sdb1 /run/media/$USER/Elements && cd /run/media/$USER/Elements"
-alias cdE="cd /run/media/$USER/Elements"
-
 # Syntax highlighting
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+# source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

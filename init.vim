@@ -24,13 +24,19 @@ set incsearch
 set scrolloff=4
 set signcolumn=yes
 set conceallevel=1
-" autocmd VimEnter * NERDTree | wincmd p
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-autocmd VimEnter * hi Normal ctermbg=none
-":options for help
+let NERDTreeShowHidden=1
+" nnoremap <C-l> :!pdflatex *.tex<CR>
+" nav
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
+autocmd VimEnter * hi Normal ctermbg=none
+
+":options for help
 
 " Other stuff
 colorscheme gruvbox
