@@ -1,0 +1,66 @@
+#!/bin/sh
+# Installation aliases
+alias xi="doas pacman -S"
+alias xr="doas pacman -Runs"
+alias xx="doas pacman"
+alias xU="doas pacman -ySu"
+
+#kb alias
+alias ch="setxkbmap ch"
+alias us="setxkbmap us"
+
+# power aliases
+alias pow="sudo poweroff"
+alias reb="reboot"
+alias asdf="startx"
+
+# file aliases
+alias ls="ls --color"
+alias ls-="ls"
+alias la="ls -A --color"
+alias ll="ls -lA -h --color"
+alias wl="ls -A --color | wc -l"
+alias ..="cd .."
+alias lb="cd ~/.local/bin"
+
+# LaTeX aliases
+alias TX="cp $HOME/dox/latex/doc/doc.tex"
+alias xl="xelatex"
+alias pl="pdflatex"
+alias pkg="nvim $HOME/dox/etc/pkg"
+alias texclean="rm *.aux *.fdb_latexmk *.fls *.log *.synctex.gz"
+
+# Programs
+alias clock="tty-clock -S -s -c -C 6"
+alias SM="mw -Y;neomutt"
+alias v="nvim"
+alias z="setsid zathura"
+alias am="alsamixer"
+alias pm="pulsemixer"
+alias km="kmix"
+alias zzz="doas zzz"
+alias moc="mocp -O MOCDir=\"~/.config\"/moc"
+
+# conveniency aliases
+alias rpi="1.sh"
+alias liro="living-room.sh"
+alias mus="cd $HOME/dox/media/mus/"
+alias pod="cd $HOME/dox/media/podcasts/"
+alias vids="cd $HOME/dox/media/videos/"
+alias yt="cd $HOME/dox/media/videos/yt"
+alias sch="cd $HOME/dox/study/2021-22/"
+alias s="setsid -f"
+alias reload="xrdb ~/.config/.Xresources"
+alias obs="LIBGL_ALWAYS_SOFTWARE=1 setsid -f obs"
+alias webcam="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
+alias pv="pipe-viewer --resolution 480"
+
+# make
+alias mci="doas make clean install"
+
+# external hdd
+alias ele="sudo mkdir /run/media/$USER/ /run/media/$USER/Elements && sudo mount /dev/sdb1 /run/media/$USER/Elements && cd /run/media/$USER/Elements"
+alias cdE="cd /run/media/$USER/Elements"
+
+# anti-retarded alias
+alias cal="cal -m"
