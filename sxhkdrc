@@ -20,23 +20,23 @@ super + Escape
 # Custom startup keys
 #
 
-# accents
+# accents (personal script)
 super + g
 	d-char
 
-# workspaces loader
+# workspaces loader (personal script)
 super + x
 	d-workspaces
 
-# edit config files script
+# edit config files script (personal script)
 super + c
 	d-config
 
-# power dmenu script
+# power dmenu script (personal script)
 super + v
 	d-lockmenu
 
-# browser bookmarks
+# browser bookmarks (personal script)
 super + b
 	d-web
 
@@ -60,11 +60,11 @@ super + shift + n
 super + shift + o
 	gtk-pipe-viewer
 
-# email client
+# email client (personal script)
 super + a
 	st -e SM.sh
 
-# email addresses
+# email addresses (personal script)
 super + shift + a
 	d-email
 
