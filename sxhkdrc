@@ -4,10 +4,6 @@
 super + Return
 	st
 
-# terminal emulator
-super + shift + Return
-	urxvt
-
 # program launcher
 super + @space 
 	dmenu_run
@@ -20,23 +16,23 @@ super + Escape
 # Custom startup keys
 #
 
-# accents (personal script)
+# accents
 super + g
 	d-char
 
-# workspaces loader (personal script)
+# workspaces loader
 super + x
 	d-workspaces
 
-# edit config files script (personal script)
+# edit config files script
 super + c
 	d-config
 
-# power dmenu script (personal script)
+# power dmenu script
 super + v
 	d-lockmenu
 
-# browser bookmarks (personal script)
+# browser bookmarks
 super + b
 	d-web
 
@@ -56,15 +52,11 @@ super + m
 super + shift + n
 	nemo
 
-# libreoffice writer
-super + shift + o
-	gtk-pipe-viewer
-
-# email client (personal script)
+# email client
 super + a
 	st -e SM.sh
 
-# email addresses (personal script)
+# email addresses
 super + shift + a
 	d-email
 
@@ -75,3 +67,7 @@ super + shift + s
 # anki
 super + e
 	anki --no-sandbox
+
+# pass
+super + shift + p
+	passmenu
