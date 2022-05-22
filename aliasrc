@@ -35,11 +35,13 @@ alias clock="tty-clock -S -s -c -C 6"
 alias SM="mw -Y;neomutt"
 alias v="nvim"
 alias z="setsid zathura"
+alias m="mpv"
 alias am="alsamixer"
 alias pm="pulsemixer"
 alias km="kmix"
 alias zzz="doas zzz"
 alias moc="mocp -O MOCDir=\"~/.config\"/moc"
+alias cc="calcurse"
 
 # conveniency aliases
 alias rpi="1.sh"
@@ -64,3 +66,15 @@ alias cdE="cd /run/media/$USER/Elements"
 
 # anti-retarded alias
 alias cal="cal -m"
+
+# school
+alias sted="cd /home/javi/dox/study/2021-22/deu"
+alias sfra="cd /home/javi/dox/study/2021-22/fra"
+alias sgeo="cd /home/javi/dox/study/2021-22/geo"
+alias sita="cd /home/javi/dox/study/2021-22/ita"
+alias slat="cd /home/javi/dox/study/2021-22/lat"
+alias smat="cd /home/javi/dox/study/2021-22/mat"
+alias smus="cd /home/javi/dox/study/2021-22/mus"
+alias ssci="cd /home/javi/dox/study/2021-22/sci"
+alias ssre="cd /home/javi/dox/study/2021-22/sre"
+alias ssto="cd /home/javi/dox/study/2021-22/sto-civ"
